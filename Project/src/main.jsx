@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
+import App from './Part1A_IntroToReact/App.jsx';
 import './index.css';
 
 // In index.html, retrieve element with ID 'root' & render React component as child of retrieved element
