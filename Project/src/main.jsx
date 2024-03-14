@@ -12,15 +12,15 @@ ReactDOM.createRoot(document.getElementById('title')).render(
 );
 
 // Will override any content in accessed element with React Components
-ReactDOM.createRoot(document.getElementById('part1b')).render(
+ReactDOM.createRoot(document.getElementById('part1a')).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
 );
 
-// 5 - .render() need to be called for re-rendering React component manually whenever variable changes to reflect on display
+// [Part1c] 5 - .render() need to be called for re-rendering React component manually whenever variable changes to reflect on display
 let counter = 1;
-ReactDOM.createRoot(document.getElementById('part1c')).render(
+ReactDOM.createRoot(document.getElementById('part1c_1_props')).render(
   <React.StrictMode>
     <App2 counter={counter} />
   </React.StrictMode>,
@@ -28,9 +28,19 @@ ReactDOM.createRoot(document.getElementById('part1c')).render(
 counter = 2;
 
 
-// 5 - Another way is to trigger re-render every x seconds to reflect changes
+// [Part1c] 5 - Another way is to trigger re-render every x seconds to reflect changes
 setInterval(() => {
-  ReactDOM.createRoot(document.getElementById('part1c_2')).render(
+  ReactDOM.createRoot(document.getElementById('part1c_1_props2')).render(
+    <React.StrictMode>
+      <App2 counter={counter} />
+    </React.StrictMode>,
+  );
+  counter += 1;
+}, 1000);
+
+
+setInterval(() => {
+  ReactDOM.createRoot(document.getElementById('part1c_1_props2')).render(
     <React.StrictMode>
       <App2 counter={counter} />
     </React.StrictMode>,
