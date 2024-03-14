@@ -2,8 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './Part1A_IntroToReact/App.jsx';
 import App2 from './Part1C_ComponentState_EventHandlers/1_App_Props.jsx';
+import App_State from './Part1C_ComponentState_EventHandlers/2_App_State.jsx';
 import './index.css';
 
+/*
 // In index.html, retrieve element with ID 'root' & render React component as child of retrieved element
 ReactDOM.createRoot(document.getElementById('title')).render(
   <React.StrictMode>
@@ -38,13 +40,10 @@ setInterval(() => {
   counter += 1;
 }, 1000);
 
+*/
 
-setInterval(() => {
-  ReactDOM.createRoot(document.getElementById('part1c_1_props2')).render(
-    <React.StrictMode>
-      <App2 counter={counter} />
-    </React.StrictMode>,
-  );
-  counter += 1;
-}, 1000)
-
+ReactDOM.createRoot(document.getElementById('part1c_2_state')).render(
+  <React.StrictMode>
+    <App_State />
+  </React.StrictMode>,
+);
