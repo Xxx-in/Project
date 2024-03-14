@@ -15,7 +15,7 @@ const App = ({ counter }) => {
       <Component1_PassInProps name={name} age={age} />
       <Component2_DestructurePropObj name="Simon" age={12} />
       <Component3_DestructurePropParam name="Andrew" age={24} />
-      <Component4_ResponsiveCounter counter={counter} />
+      <Component4_Counter counter={counter} />
     </div>
   );
 };
@@ -56,7 +56,7 @@ const Component3_DestructurePropParam = ({ name, age }) => {
   );
 };
 
-const Component4_ResponsiveCounter = (props) => {
+const Component4_Counter = (props) => {
   const { counter } = props;
   return (
     <button>{counter}</button>
