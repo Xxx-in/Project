@@ -49,3 +49,12 @@ ReactDOM.createRoot(document.getElementById('part1c_2_state')).render(
     <App_State />
   </React.StrictMode>,
 );
+
+
+// Strict Mode intentionally invokes certain lifecycle methods (such as render) twice for each component
+// to help detect and prevent unsafe side effects
+ReactDOM.createRoot(document.getElementById('part1c_2_liftingstate')).render(
+  // <React.StrictMode>
+  <App_LiftingState />
+  // </React.StrictMode>,
+);
