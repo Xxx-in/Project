@@ -5,6 +5,8 @@ import App2 from './Part1C_ComponentState_EventHandlers/1_App_Props.jsx';
 import App_State from './Part1C_ComponentState_EventHandlers/2_App_State.jsx';
 import App_LiftingState from './Part1C_ComponentState_EventHandlers/3_App_LiftingState.jsx';
 import App_NonScalarState from './Part1D_NonScalarState/1_nonscalarstate.jsx';
+import App_AsynchronousRender from './Part1D_NonScalarState/2_asynchronousrender.jsx';
+
 import './index.css';
 
 /*
@@ -59,10 +61,17 @@ ReactDOM.createRoot(document.getElementById('part1c_2_liftingstate')).render(
   // </React.StrictMode>,
 );
 
-*/
+
 
 ReactDOM.createRoot(document.getElementById('part1d_1_nonscalarstate')).render(
   // <React.StrictMode>
   <App_NonScalarState />
   // </React.StrictMode>,
+);
+*/
+
+ReactDOM.createRoot(document.getElementById('part1d_2_asynchronousrender')).render(
+  <React.StrictMode>
+    <App_AsynchronousRender />
+  </React.StrictMode>
 );
