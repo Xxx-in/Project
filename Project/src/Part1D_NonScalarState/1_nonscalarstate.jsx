@@ -86,11 +86,15 @@ function Component3_ArrayAsState() {
     setAll(allClicks.concat('L')); // concat() method does not mutate the existing array; return a new copy of array with added item
 
     // 5.2 - Note that clickSet3_L is not updated to +1 immediately after exec set function
+    // |_ State change -> trigger render -> rendering takes a snapshot of everything in the current moment & use current values for computation to sub in for render
+    // |_ Render requests are queued up sequentially based on sequence of state changes   
+    // How React handle state change triggering renders: snapshot everything for computation to be used during render before updating state
+    // clickSet3_R is permanently fixed at current state value for computation (i.e., at init = 0) before it is rendered
     alert(`left is clicked: ${clickSet3_L}`);
-    setClickSet3_L(clickSet3_L + 1);
+    setClickSet3_L(clickSet3_L + 1); // == 0 + 1
     alert(`left is updated: ${clickSet3_L}`);
 
-    setTotalClicks(clickSet3_L + clickSet3_R);
+    setTotalClicks(clickSet3_L + clickSet3_R); // == 0 + clickSet3_R 
   };
 
   const handleRightClick = () => {
@@ -103,8 +107,6 @@ function Component3_ArrayAsState() {
   };
 
   // 5 - Updates are asynchronous
-  // |_ State change -> trigger render -> rendering takes a snapshot of everything in the current moment & use current values for computation to sub in for render
-  // |_ Render requests are queued up sequentially based on sequence of state changes
   const [totalClicks, setTotalClicks] = useState(0); // How many times in total Left & Right button is clicked
 
   return (
